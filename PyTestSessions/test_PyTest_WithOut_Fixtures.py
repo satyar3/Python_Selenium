@@ -3,6 +3,7 @@ from selenium import webdriver
 
 driver = None
 
+
 def setup_module(module):
     global driver
     driver = webdriver.Chrome()

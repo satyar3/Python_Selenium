@@ -7,7 +7,7 @@ import pytest
 # Method should have test in it
 
 # For a specific test to run, use below command :
-# py.test -k login -v
+# py.test -k login -v #-v - #verbose like PASSED or FAILED
 
 # Execute test cases only with marker as login
 # py.test -m login
