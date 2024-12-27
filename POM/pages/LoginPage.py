@@ -2,10 +2,12 @@ from POM.pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 
+from POM.pages.HomePage import HomePage
+
 
 class Login(BasePage):
-    EMAIL_ID = (By.NAME, "user_name")
-    PASSWORD = (By.ID, "password_field")
+    EMAIL_ID = (By.ID, "username")
+    PASSWORD = (By.NAME, "password")
     SUBMIT_BTN = (By.CSS_SELECTOR, "#submit")
 
     def __init__(self, driver: webdriver):
@@ -23,3 +25,4 @@ class Login(BasePage):
         self.do_send_keys(self.EMAIL_ID, user_name)
         self.do_send_keys(self.PASSWORD, password)
         self.do_click(self.SUBMIT_BTN)
+        return HomePage(self.driver)

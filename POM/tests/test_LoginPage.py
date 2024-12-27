@@ -10,7 +10,8 @@ class Test_Login(BaseTest):
         self.login_page = Login(self.driver)
         assert "Google" == self.login_page.get_login_page_title()
 
-    @pytest.mark.parametrize("user_id, password", [('test_id_1', 'test_pw_1'), ('test_id_2', 'test_pw_2')])
+    @pytest.mark.parametrize("user_id, password", [('student', 'Password123')])
     def test_do_login(self, user_id, password):
         self.login_page = Login(self.driver)
         self.login_page.do_login(user_name=user_id, password=password)
+

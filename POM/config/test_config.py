@@ -1,3 +1,3 @@
 class TestConfig:
     chrome_path = "some_path"
-    base_url = "https://google.com"
+    base_url = "https://practicetestautomation.com/practice-test-login/"

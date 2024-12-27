@@ -13,16 +13,15 @@ class BasePage:
         self.driver = driver
 
     def do_click(self, by_locator):
-        element  = WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(by_locator))
+        element = WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(by_locator))
         element.click()
 
     def do_send_keys(self, by_locator, text):
-        element = WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(by_locator))
-        element.send_keys(text)
+        WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(by_locator)).send_keys(text)
 
     def is_enabled(self, by_locator):
         element = WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(by_locator))
         return bool(element)
-    
+
     def get_title(self):
         return self.driver.title
